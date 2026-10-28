@@ -1,0 +1,11 @@
+station,day_no,previous_day,previous_total,days_elapsed,new_scans
+lake,2,NULL,NULL,NULL,NULL
+lake,3,2,5,1,4
+lake,6,3,9,3,3
+quay,1,NULL,NULL,NULL,NULL
+quay,2,1,8,1,0
+quay,5,2,8,3,12
+ridge,1,NULL,NULL,NULL,NULL
+ridge,3,1,40,2,15
+ridge,4,3,55,1,NULL
+ridge,6,4,NULL,2,NULL

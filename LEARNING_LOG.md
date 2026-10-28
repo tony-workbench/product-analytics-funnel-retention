@@ -58,3 +58,20 @@ on this date; scheduled lessons alone are not completion evidence.
 - **Next Milestone:** an independently completed LAG comparison and its
   validation, or the previously planned service-count preaggregation exercise.
   Neither is recorded as completed.
+
+## 2026-10-26 — Week 10 (Oct 25–31): Lesson Practice 3 — LAG
+
+Date records Tony's confirmation and packaging.
+
+- **Learned:** previous recorded rows, station partitions, day gaps and NULL versus zero.
+- **Built:** a six-column station-reading change report. Codex generated the initial
+  solution; Tony confirmed his subsequent practice, revision and understanding.
+- **Verified:** 25 repository tests passed (17 existing, 8 added packaging checks).
+  The report returns 10 rows; ridge/day 6 has a two-day gap and NULL scan change,
+  while quay/day 2 has zero change. The CSV matches after LF normalization.
+- **Evidence:** `queries/scan_reading_report.sql`,
+  `tests/test_scan_reading_report.py`, `outputs/tables/scan_reading_report.csv`.
+- **What I Can Explain Now:** LAG uses the prior recorded row, including unreadable
+  totals; a multi-day scan difference is an interval count, not a daily rate.
+- **Next Milestone:** compare service-count preaggregation with the grouped join.
+  The eight extra tests are Codex QA; preaggregation remains unfinished.

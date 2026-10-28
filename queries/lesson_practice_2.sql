@@ -80,12 +80,6 @@ SELECT (SELECT COUNT(*) FROM newest_device_updates) AS newest_rows,
        (SELECT COUNT(*) FROM earliest_device_updates) AS earliest_rows,
        (SELECT COUNT(DISTINCT device) FROM updates) AS source_devices;
 
--- Original normal test inputs (id, device, ts, state):
--- (30,'c',4,'offline'), (10,'c',9,'online'),
--- (50,'a',7,'online'), (60,'a',3,'offline').
--- Newest expected: [('a','online'), ('c','online')]. Time outranks ID.
--- Original tie counterexample inputs:
--- (8,'b',20,'online'), (3,'b',20,'offline'), (99,'b',5,'offline'),
--- (7,'a',10,'offline'), (2,'a',10,'online').
--- Newest expected: [('a','offline'), ('b','online')]. Greater ID wins the tie.
--- Executable versions of these inputs and checks are in tests/test_lesson_practice_2.py.
+-- Extra fixtures and expectations are in tests/test_lesson_practice_2.py:
+-- NORMAL_ROWS checks that time outranks ID; COUNTEREXAMPLE_ROWS checks the ID tie-break.
+-- The insertion-order test covers all 120 permutations of the counterexample.
